@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Policy DSL</title>
+    <style>
+        :root {
+            --bg: #0b1220;
+            --panel: #121a2b;
+            --panel-2: #172036;
+            --text: #e5eefc;
+            --muted: #94a3b8;
+            --line: #2b3753;
+            --primary: #38bdf8;
+            --primary-dark: #0ea5e9;
+            --green: #22c55e;
+            --red: #ef4444;
+            --yellow: #facc15;
+            --code: #09111f;
+            --shadow: 0 10px 30px rgba(0,0,0,0.25);
+            --radius: 18px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(56,189,248,0.12), transparent 30%),
+                radial-gradient(circle at top right, rgba(34,197,94,0.08), transparent 25%),
+                var(--bg);
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 28px 20px 40px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(56,189,248,0.18), rgba(14,165,233,0.08));
+            border: 1px solid rgba(56,189,248,0.18);
+            box-shadow: var(--shadow);
+            border-radius: 24px;
+            padding: 24px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            margin: 0 0 8px;
+            font-size: 34px;
+            color: #ffffff;
+        }
+
+        .hero p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            background: rgba(18, 26, 43, 0.92);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            padding: 18px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+        }
+
+        .box h2 {
+            margin-top: 0;
+            margin-bottom: 14px;
+            color: #dbeafe;
+            font-size: 20px;
+        }
+
+        .box h3 {
+            margin-top: 22px;
+            margin-bottom: 12px;
+            color: #dbeafe;
+            font-size: 17px;
+        }
+
+        .subtext {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: -6px;
+            margin-bottom: 12px;
+        }
+
+        textarea, input {
+            width: 100%;
+            padding: 12px 14px;
+            margin-top: 8px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            background: #1f2a44;
+            color: white;
+            outline: none;
+        }
+
+        textarea:focus, input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(56,189,248,0.15);
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        button, .download-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #03111a;
+            border: none;
+            padding: 11px 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.15s ease, opacity 0.15s ease;
+        }
+
+        button:hover, .download-btn:hover {
+            transform: translateY(-1px);
+            opacity: 0.95;
+        }
+
+        .download-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        pre {
+            background: var(--code);
+            padding: 14px;
+            border-radius: 14px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border: 1px solid #1e293b;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--code);
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        th, td {
+            border: 1px solid #22304a;
+            padding: 10px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        th {
+            background: #162033;
+            color: #dbeafe;
+        }
+
+        .result {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .allow {
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        .deny {
+            color: var(--red);
+            font-weight: bold;
+        }
+
+        .error {
+            color: var(--red);
+            font-weight: bold;
+        }
+
+        .ok {
+            color: var(--green);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .warn {
+            color: var(--yellow);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .bad {
+            color: var(--red);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .stat {
+            background: var(--panel-2);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 14px;
+        }
+
+        .stat-label {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 1100px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Access Policy DSL UI</h1>
+            <p>Compile human-readable network policy into ACLs, firewall rules, validation results, and simulation output.</p>
+        </div>
+
+        <form method="POST">
+            <div class="grid">
+                <div class="box">
+                    <h2>Policy Input</h2>
+                    <div class="subtext">Write or edit your policy rules, then compile them.</div>
+                    <textarea name="policy_text" rows="14">{{ policy_text }}</textarea>
+                    <div class="actions">
+                        <button type="submit">Compile Policy</button>
+                        <button type="button" onclick="location.reload()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h2>Simulation</h2>
+                    <div class="subtext">Test a specific access request against your policy.</div>
+                    <input type="text" name="src" placeholder="Source (e.g., Students)" value="{{ request.form.get('src', '') }}">
+                    <input type="text" name="dst" placeholder="Destination (e.g., Internet)" value="{{ request.form.get('dst', '') }}">
+                    <input type="text" name="service" placeholder="Service (e.g., HTTP)" value="{{ request.form.get('service', '') }}">
+                    <div class="actions">
+                        <button type="submit">Test Access</button>
+                    </div>
+                </div>
+            </div>
+
+            {% if sim_result %}
+            <div class="box">
+                <h2>Simulation Result</h2>
+                <div class="result {% if sim_result == 'ALLOW' %}allow{% elif sim_result == 'DENY' %}deny{% else %}error{% endif %}">
+                    {{ sim_result }}
+                </div>
+                {% if sim_explain %}
+                <div class="subtext">{{ sim_explain }}</div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if model %}
+            <div class="stats">
+    <div class="stat">
+        <div class="stat-label">Total Rules</div>
+        <div class="stat-value">{{ model.rules|length }}</div>
+    </div>
+
+    <div class="stat">
+        <div class="stat-label">Roles Defined</div>
+        <div class="stat-value">{{ model.roles|length }}</div>
+    </div>
+
+    <!--  NEW VPN BLOCK -->
+    <div class="stat">
+        <div class="stat-label">VPN Pools</div>
+        <div class="stat-value">{{ model.vpn_pools|length }}</div>
+    </div>
+
+    <div class="stat">
+        <div class="stat-label">Conflicts Found</div>
+        <div class="stat-value {% if conflicts %}bad{% else %}ok{% endif %}">
+            {{ conflicts|length }}
+        </div>
+    </div>
+
+    <div class="stat">
+        <div class="stat-label">Unreachable Rules</div>
+        <div class="stat-value {% if unreachable_rules %}bad{% else %}ok{% endif %}">
+            {{ unreachable_rules|length }}
+        </div>
+    </div>
+
+    <div class="stat">
+        <div class="stat-label">Redundant Rules</div>
+        <div class="stat-value {% if redundant_rules %}warn{% else %}ok{% endif %}">
+            {{ redundant_rules|length }}
+        </div>
+    </div>
+</div>
+            <div class="grid">
+                <div class="box">
+                    <h2>Generated iptables Rules</h2>
+                    <div class="subtext">Linux firewall rules for your policy.</div>
+                    <pre>{% for rule in iptables_rules %}{{ rule }}
+{% endfor %}</pre>
+                    {% if iptables_rules %}
+                    <div class="download-row">
+                        <a href="/download/firewall.sh" class="download-btn">Download Script</a>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="box">
+                    <h2>Cisco ACL Rules</h2>
+                    <div class="subtext">Cisco router access control lists.</div>
+                    <pre>{% for rule in cisco_acl_rules %}{{ rule }}
+{% endfor %}</pre>
+                    {% if cisco_acl_rules %}
+                    <div class="download-row">
+                        <a href="/download/acl.txt" class="download-btn">Download ACL</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="box">
+                    <h2>Policy Validation</h2>
+                    <div class="subtext">Check for conflicts, duplicate rules, unreachable rules, and redundant rules.</div>
+
+                    <h3>Conflicts</h3>
+                    {% if conflicts %}
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rule 1</th>
+                                    <th>Rule 2</th>
+                                    <th>Source</th>
+                                    <th>Destination</th>
+                                    <th>Service</th>
+                                    <th>Conflict</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for conflict in conflicts %}
+                                <tr>
+                                    <td>#{{ conflict.first_rule_number }}</td>
+                                    <td>#{{ conflict.second_rule_number }}</td>
+                                    <td>{{ conflict.src }}</td>
+                                    <td>{{ conflict.dst }}</td>
+                                    <td>{{ conflict.service }}</td>
+                                    <td class="bad">{{ conflict.first_action }} vs {{ conflict.second_action }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <div class="ok">✓ No conflicts found</div>
+                    {% endif %}
+
+                    <h3>Duplicates</h3>
+                    {% if duplicates %}
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Original Rule</th>
+                                    <th>Duplicate Rule</th>
+                                    <th>Action</th>
+                                    <th>Source</th>
+                                    <th>Destination</th>
+                                    <th>Service</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for duplicate in duplicates %}
+                                <tr>
+                                    <td>#{{ duplicate.first_rule_number }}</td>
+                                    <td>#{{ duplicate.duplicate_rule_number }}</td>
+                                    <td>{{ duplicate.action }}</td>
+                                    <td>{{ duplicate.src }}</td>
+                                    <td>{{ duplicate.dst }}</td>
+                                    <td>{{ duplicate.service }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <div class="ok">✓ No duplicates found</div>
+                    {% endif %}
+
+                    <h3>Unreachable Rules</h3>
+                    {% if unreachable_rules %}
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Blocked Rule</th>
+                                    <th>Blocking Rule</th>
+                                    <th>Action</th>
+                                    <th>Source</th>
+                                    <th>Destination</th>
+                                    <th>Service</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for rule in unreachable_rules %}
+                                <tr>
+                                    <td>#{{ rule.blocked_rule_number }}</td>
+                                    <td>#{{ rule.blocking_rule_number }}</td>
+                                    <td>{{ rule.action }}</td>
+                                    <td>{{ rule.src }}</td>
+                                    <td>{{ rule.dst }}</td>
+                                    <td>{{ rule.service }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <div class="ok">✓ No unreachable rules found</div>
+                    {% endif %}
+
+                    <h3>Redundant Rules</h3>
+                    {% if redundant_rules %}
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Redundant Rule</th>
+                                    <th>Covered By</th>
+                                    <th>Action</th>
+                                    <th>Source</th>
+                                    <th>Destination</th>
+                                    <th>Service</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for rule in redundant_rules %}
+                                <tr>
+                                    <td>#{{ rule.redundant_rule_number }}</td>
+                                    <td>#{{ rule.covered_by_rule_number }}</td>
+                                    <td>{{ rule.action }}</td>
+                                    <td>{{ rule.src }}</td>
+                                    <td>{{ rule.dst }}</td>
+                                    <td>{{ rule.service }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <div class="ok">✓ No redundant rules found</div>
+                    {% endif %}
+                </div>
+
+                <div class="box">
+                    <h2>Validation Matrix</h2>
+                    <div class="subtext">Complete access matrix for all role combinations.</div>
+                    {% if matrix %}
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Source</th>
+                                    <th>Destination</th>
+                                    <th>Service</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in matrix %}
+                                <tr>
+                                    <td>{{ row[0] }}</td>
+                                    <td>{{ row[1] }}</td>
+                                    <td>{{ row[2] }}</td>
+                                    <td class="{% if row[3] == 'allow' %}allow{% elif row[3] == 'deny' %}deny{% else %}warn{% endif %}">
+                                        {{ row[3].upper() }}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <div class="download-row">
+                            <a href="/download/report.txt" class="download-btn">Download Full Report</a>
+                            <a href="/download/model.json" class="download-btn">Download JSON Model</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>

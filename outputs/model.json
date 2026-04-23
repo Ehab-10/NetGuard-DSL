@@ -1,0 +1,114 @@
+{
+    "roles": [
+        "Students",
+        "Teachers",
+        "Guests",
+        "HR",
+        "Remote_Staff"
+    ],
+    "rules": [
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "Students",
+            "dst": "Internet",
+            "service": "HTTP"
+        },
+        {
+            "type": "rule",
+            "action": "deny",
+            "src": "Students",
+            "dst": "Internet",
+            "service": "HTTP"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "Students",
+            "dst": "DNS_Server",
+            "service": "DNS"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "Students",
+            "dst": "DNS_Server",
+            "service": "DNS"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "Teachers",
+            "dst": "Admin_Network",
+            "service": "SSH"
+        },
+        {
+            "type": "rule",
+            "action": "deny",
+            "src": "Teachers",
+            "dst": "Admin_Network",
+            "service": "SSH"
+        },
+        {
+            "type": "rule",
+            "action": "deny",
+            "src": "Guests",
+            "dst": "Internal_Network",
+            "service": "ANY"
+        },
+        {
+            "type": "rule",
+            "action": "deny",
+            "src": "Guests",
+            "dst": "Internal_Network",
+            "service": "ANY"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "HR",
+            "dst": "HR_Server",
+            "service": "HTTPS"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "HR",
+            "dst": "HR_Server",
+            "service": "HTTPS"
+        },
+        {
+            "type": "rule",
+            "action": "deny",
+            "src": "Remote_Staff",
+            "dst": "Student_Net",
+            "service": "ANY"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "Remote_Staff",
+            "dst": "Student_Net",
+            "service": "HTTP"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "Remote_Staff",
+            "dst": "HR_Server",
+            "service": "HTTPS"
+        },
+        {
+            "type": "rule",
+            "action": "deny",
+            "src": "Remote_Staff",
+            "dst": "HR_Server",
+            "service": "HTTPS"
+        }
+    ],
+    "vpn_pools": {
+        "Remote_Staff": "10.8.0.0/24"
+    },
+    "networks": {},
+    "services": {}
+}

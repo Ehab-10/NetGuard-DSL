@@ -1,0 +1,174 @@
+=== MODEL ===
+{'roles': ['Students', 'Teachers', 'Guests', 'HR', 'Remote_Staff'], 'rules': [{'type': 'rule', 'action': 'allow', 'src': 'Students', 'dst': 'Internet', 'service': 'HTTP'}, {'type': 'rule', 'action': 'deny', 'src': 'Students', 'dst': 'Internet', 'service': 'HTTP'}, {'type': 'rule', 'action': 'allow', 'src': 'Students', 'dst': 'DNS_Server', 'service': 'DNS'}, {'type': 'rule', 'action': 'allow', 'src': 'Students', 'dst': 'DNS_Server', 'service': 'DNS'}, {'type': 'rule', 'action': 'allow', 'src': 'Teachers', 'dst': 'Admin_Network', 'service': 'SSH'}, {'type': 'rule', 'action': 'deny', 'src': 'Teachers', 'dst': 'Admin_Network', 'service': 'SSH'}, {'type': 'rule', 'action': 'deny', 'src': 'Guests', 'dst': 'Internal_Network', 'service': 'ANY'}, {'type': 'rule', 'action': 'deny', 'src': 'Guests', 'dst': 'Internal_Network', 'service': 'ANY'}, {'type': 'rule', 'action': 'allow', 'src': 'HR', 'dst': 'HR_Server', 'service': 'HTTPS'}, {'type': 'rule', 'action': 'allow', 'src': 'HR', 'dst': 'HR_Server', 'service': 'HTTPS'}, {'type': 'rule', 'action': 'deny', 'src': 'Remote_Staff', 'dst': 'Student_Net', 'service': 'ANY'}, {'type': 'rule', 'action': 'allow', 'src': 'Remote_Staff', 'dst': 'Student_Net', 'service': 'HTTP'}, {'type': 'rule', 'action': 'allow', 'src': 'Remote_Staff', 'dst': 'HR_Server', 'service': 'HTTPS'}, {'type': 'rule', 'action': 'deny', 'src': 'Remote_Staff', 'dst': 'HR_Server', 'service': 'HTTPS'}], 'vpn_pools': {'Remote_Staff': '10.8.0.0/24'}}
+
+=== CONFLICTS ===
+Rule #1 conflicts with Rule #2 for Students -> Internet (HTTP): allow vs deny
+Rule #5 conflicts with Rule #6 for Teachers -> Admin_Network (SSH): allow vs deny
+Rule #13 conflicts with Rule #14 for Remote_Staff -> HR_Server (HTTPS): allow vs deny
+
+=== DUPLICATES ===
+Rule #4 duplicates Rule #3: allow Students -> DNS_Server (DNS)
+Rule #8 duplicates Rule #7: deny Guests -> Internal_Network (ANY)
+Rule #10 duplicates Rule #9: allow HR -> HR_Server (HTTPS)
+
+=== UNREACHABLE RULES ===
+Rule #2 is unreachable because of Rule #1: deny Students -> Internet (HTTP)
+Rule #6 is unreachable because of Rule #5: deny Teachers -> Admin_Network (SSH)
+Rule #14 is unreachable because of Rule #13: deny Remote_Staff -> HR_Server (HTTPS)
+
+=== REDUNDANT RULES ===
+Rule #4 is redundant because it is already covered by Rule #3: allow Students -> DNS_Server (DNS)
+Rule #8 is redundant because it is already covered by Rule #7: deny Guests -> Internal_Network (ANY)
+Rule #10 is redundant because it is already covered by Rule #9: allow HR -> HR_Server (HTTPS)
+
+=== VALIDATION MATRIX ===
+Students -> Admin_Network (ANY): DENY
+Students -> Admin_Network (DNS): DENY
+Students -> Admin_Network (HTTP): DENY
+Students -> Admin_Network (HTTPS): DENY
+Students -> Admin_Network (SSH): DENY
+Students -> DNS_Server (ANY): DENY
+Students -> DNS_Server (DNS): ALLOW
+Students -> DNS_Server (HTTP): DENY
+Students -> DNS_Server (HTTPS): DENY
+Students -> DNS_Server (SSH): DENY
+Students -> HR_Server (ANY): DENY
+Students -> HR_Server (DNS): DENY
+Students -> HR_Server (HTTP): DENY
+Students -> HR_Server (HTTPS): DENY
+Students -> HR_Server (SSH): DENY
+Students -> Internal_Network (ANY): DENY
+Students -> Internal_Network (DNS): DENY
+Students -> Internal_Network (HTTP): DENY
+Students -> Internal_Network (HTTPS): DENY
+Students -> Internal_Network (SSH): DENY
+Students -> Internet (ANY): DENY
+Students -> Internet (DNS): DENY
+Students -> Internet (HTTP): ALLOW
+Students -> Internet (HTTPS): DENY
+Students -> Internet (SSH): DENY
+Students -> Student_Net (ANY): DENY
+Students -> Student_Net (DNS): DENY
+Students -> Student_Net (HTTP): DENY
+Students -> Student_Net (HTTPS): DENY
+Students -> Student_Net (SSH): DENY
+Teachers -> Admin_Network (ANY): DENY
+Teachers -> Admin_Network (DNS): DENY
+Teachers -> Admin_Network (HTTP): DENY
+Teachers -> Admin_Network (HTTPS): DENY
+Teachers -> Admin_Network (SSH): ALLOW
+Teachers -> DNS_Server (ANY): DENY
+Teachers -> DNS_Server (DNS): DENY
+Teachers -> DNS_Server (HTTP): DENY
+Teachers -> DNS_Server (HTTPS): DENY
+Teachers -> DNS_Server (SSH): DENY
+Teachers -> HR_Server (ANY): DENY
+Teachers -> HR_Server (DNS): DENY
+Teachers -> HR_Server (HTTP): DENY
+Teachers -> HR_Server (HTTPS): DENY
+Teachers -> HR_Server (SSH): DENY
+Teachers -> Internal_Network (ANY): DENY
+Teachers -> Internal_Network (DNS): DENY
+Teachers -> Internal_Network (HTTP): DENY
+Teachers -> Internal_Network (HTTPS): DENY
+Teachers -> Internal_Network (SSH): DENY
+Teachers -> Internet (ANY): DENY
+Teachers -> Internet (DNS): DENY
+Teachers -> Internet (HTTP): DENY
+Teachers -> Internet (HTTPS): DENY
+Teachers -> Internet (SSH): DENY
+Teachers -> Student_Net (ANY): DENY
+Teachers -> Student_Net (DNS): DENY
+Teachers -> Student_Net (HTTP): DENY
+Teachers -> Student_Net (HTTPS): DENY
+Teachers -> Student_Net (SSH): DENY
+Guests -> Admin_Network (ANY): DENY
+Guests -> Admin_Network (DNS): DENY
+Guests -> Admin_Network (HTTP): DENY
+Guests -> Admin_Network (HTTPS): DENY
+Guests -> Admin_Network (SSH): DENY
+Guests -> DNS_Server (ANY): DENY
+Guests -> DNS_Server (DNS): DENY
+Guests -> DNS_Server (HTTP): DENY
+Guests -> DNS_Server (HTTPS): DENY
+Guests -> DNS_Server (SSH): DENY
+Guests -> HR_Server (ANY): DENY
+Guests -> HR_Server (DNS): DENY
+Guests -> HR_Server (HTTP): DENY
+Guests -> HR_Server (HTTPS): DENY
+Guests -> HR_Server (SSH): DENY
+Guests -> Internal_Network (ANY): DENY
+Guests -> Internal_Network (DNS): DENY
+Guests -> Internal_Network (HTTP): DENY
+Guests -> Internal_Network (HTTPS): DENY
+Guests -> Internal_Network (SSH): DENY
+Guests -> Internet (ANY): DENY
+Guests -> Internet (DNS): DENY
+Guests -> Internet (HTTP): DENY
+Guests -> Internet (HTTPS): DENY
+Guests -> Internet (SSH): DENY
+Guests -> Student_Net (ANY): DENY
+Guests -> Student_Net (DNS): DENY
+Guests -> Student_Net (HTTP): DENY
+Guests -> Student_Net (HTTPS): DENY
+Guests -> Student_Net (SSH): DENY
+HR -> Admin_Network (ANY): DENY
+HR -> Admin_Network (DNS): DENY
+HR -> Admin_Network (HTTP): DENY
+HR -> Admin_Network (HTTPS): DENY
+HR -> Admin_Network (SSH): DENY
+HR -> DNS_Server (ANY): DENY
+HR -> DNS_Server (DNS): DENY
+HR -> DNS_Server (HTTP): DENY
+HR -> DNS_Server (HTTPS): DENY
+HR -> DNS_Server (SSH): DENY
+HR -> HR_Server (ANY): DENY
+HR -> HR_Server (DNS): DENY
+HR -> HR_Server (HTTP): DENY
+HR -> HR_Server (HTTPS): ALLOW
+HR -> HR_Server (SSH): DENY
+HR -> Internal_Network (ANY): DENY
+HR -> Internal_Network (DNS): DENY
+HR -> Internal_Network (HTTP): DENY
+HR -> Internal_Network (HTTPS): DENY
+HR -> Internal_Network (SSH): DENY
+HR -> Internet (ANY): DENY
+HR -> Internet (DNS): DENY
+HR -> Internet (HTTP): DENY
+HR -> Internet (HTTPS): DENY
+HR -> Internet (SSH): DENY
+HR -> Student_Net (ANY): DENY
+HR -> Student_Net (DNS): DENY
+HR -> Student_Net (HTTP): DENY
+HR -> Student_Net (HTTPS): DENY
+HR -> Student_Net (SSH): DENY
+Remote_Staff -> Admin_Network (ANY): DENY
+Remote_Staff -> Admin_Network (DNS): DENY
+Remote_Staff -> Admin_Network (HTTP): DENY
+Remote_Staff -> Admin_Network (HTTPS): DENY
+Remote_Staff -> Admin_Network (SSH): DENY
+Remote_Staff -> DNS_Server (ANY): DENY
+Remote_Staff -> DNS_Server (DNS): DENY
+Remote_Staff -> DNS_Server (HTTP): DENY
+Remote_Staff -> DNS_Server (HTTPS): DENY
+Remote_Staff -> DNS_Server (SSH): DENY
+Remote_Staff -> HR_Server (ANY): DENY
+Remote_Staff -> HR_Server (DNS): DENY
+Remote_Staff -> HR_Server (HTTP): DENY
+Remote_Staff -> HR_Server (HTTPS): ALLOW
+Remote_Staff -> HR_Server (SSH): DENY
+Remote_Staff -> Internal_Network (ANY): DENY
+Remote_Staff -> Internal_Network (DNS): DENY
+Remote_Staff -> Internal_Network (HTTP): DENY
+Remote_Staff -> Internal_Network (HTTPS): DENY
+Remote_Staff -> Internal_Network (SSH): DENY
+Remote_Staff -> Internet (ANY): DENY
+Remote_Staff -> Internet (DNS): DENY
+Remote_Staff -> Internet (HTTP): DENY
+Remote_Staff -> Internet (HTTPS): DENY
+Remote_Staff -> Internet (SSH): DENY
+Remote_Staff -> Student_Net (ANY): DENY
+Remote_Staff -> Student_Net (DNS): DENY
+Remote_Staff -> Student_Net (HTTP): DENY
+Remote_Staff -> Student_Net (HTTPS): DENY
+Remote_Staff -> Student_Net (SSH): DENY

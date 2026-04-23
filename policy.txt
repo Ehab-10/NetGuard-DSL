@@ -1,0 +1,26 @@
+role Students
+role Teachers
+role Guests
+role HR
+vpn Remote_Staff 10.8.0.0/24
+
+allow Students -> Internet service HTTP
+deny Students -> Internet service HTTP
+
+allow Students -> DNS_Server service DNS
+allow Students -> DNS_Server service DNS
+
+allow Teachers -> Admin_Network service SSH
+deny Teachers -> Admin_Network service SSH
+
+deny Guests -> Internal_Network service ANY
+deny Guests -> Internal_Network service ANY
+
+allow HR -> HR_Server service HTTPS
+allow HR -> HR_Server service HTTPS
+
+deny Remote_Staff -> Student_Net service ANY
+allow Remote_Staff -> Student_Net service HTTP
+
+allow Remote_Staff -> HR_Server service HTTPS
+deny Remote_Staff -> HR_Server service HTTPS

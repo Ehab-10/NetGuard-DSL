@@ -1,0 +1,3824 @@
+[
+    {
+        "src": "CCTV",
+        "dst": "Admin_Network",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Admin_Network",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Admin_Network",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Admin_Network",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Admin_Network",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Admin_Network",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Admin_Network",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "DHCP_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "DHCP_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "DHCP_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "DHCP_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "DHCP_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "DHCP_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "DHCP_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "DNS_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "DNS_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "DNS_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "DNS_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "DNS_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "DNS_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "DNS_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Guests",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Guests",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Guests",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Guests",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Guests",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Guests",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Guests",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "HR",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "HR",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "HR",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "HR",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "HR",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "HR",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "HR",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "HR_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "HR_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "HR_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "HR_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "HR_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "HR_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "HR_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Internal_Network",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Internal_Network",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Internal_Network",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Internal_Network",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Internal_Network",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Internal_Network",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Internal_Network",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Internet",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Internet",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Internet",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Internet",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Internet",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Internet",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Internet",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "IoT",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "IoT",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "IoT",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "IoT",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "IoT",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "IoT",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "IoT",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Remote_Staff",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Remote_Staff",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Remote_Staff",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Remote_Staff",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Remote_Staff",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Remote_Staff",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Remote_Staff",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Student_Net",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Student_Net",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Student_Net",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Student_Net",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Student_Net",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Student_Net",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Student_Net",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Students",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Students",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Students",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Students",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Students",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Students",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Students",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Teachers",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Teachers",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Teachers",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Teachers",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Teachers",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Teachers",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "CCTV",
+        "dst": "Teachers",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Admin_Network",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Admin_Network",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Admin_Network",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Admin_Network",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Admin_Network",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Admin_Network",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Admin_Network",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "CCTV",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "CCTV",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "CCTV",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "CCTV",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "CCTV",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "CCTV",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "CCTV",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "DHCP_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "DHCP_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "DHCP_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "DHCP_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "DHCP_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "DHCP_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "DHCP_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "DNS_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "DNS_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "DNS_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "DNS_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "DNS_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "DNS_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "DNS_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "HR",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "HR",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "HR",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "HR",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "HR",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "HR",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "HR",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "HR_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "HR_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "HR_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "HR_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "HR_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "HR_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "HR_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Internal_Network",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Internal_Network",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Internal_Network",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Internal_Network",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Internal_Network",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Internal_Network",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Internal_Network",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Internet",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Internet",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Internet",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Internet",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Internet",
+        "service": "HTTP",
+        "result": "allow"
+    },
+    {
+        "src": "Guests",
+        "dst": "Internet",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Internet",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "IoT",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "IoT",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "IoT",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "IoT",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "IoT",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "IoT",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "IoT",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Remote_Staff",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Remote_Staff",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Remote_Staff",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Remote_Staff",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Remote_Staff",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Remote_Staff",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Remote_Staff",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Student_Net",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Student_Net",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Student_Net",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Student_Net",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Student_Net",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Student_Net",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Student_Net",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Students",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Students",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Students",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Students",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Students",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Students",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Students",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Teachers",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Teachers",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Teachers",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Teachers",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Teachers",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Teachers",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Guests",
+        "dst": "Teachers",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Admin_Network",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Admin_Network",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Admin_Network",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Admin_Network",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Admin_Network",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Admin_Network",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Admin_Network",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "CCTV",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "CCTV",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "CCTV",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "CCTV",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "CCTV",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "CCTV",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "CCTV",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "DHCP_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "DHCP_Server",
+        "service": "DHCP",
+        "result": "allow"
+    },
+    {
+        "src": "HR",
+        "dst": "DHCP_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "DHCP_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "DHCP_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "DHCP_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "DHCP_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "DNS_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "DNS_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "DNS_Server",
+        "service": "DNS",
+        "result": "allow"
+    },
+    {
+        "src": "HR",
+        "dst": "DNS_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "DNS_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "DNS_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "DNS_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Guests",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Guests",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Guests",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Guests",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Guests",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Guests",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Guests",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "HR_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "HR_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "HR_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "HR_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "HR_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "HR_Server",
+        "service": "HTTPS",
+        "result": "allow"
+    },
+    {
+        "src": "HR",
+        "dst": "HR_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Internal_Network",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Internal_Network",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Internal_Network",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Internal_Network",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Internal_Network",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Internal_Network",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Internal_Network",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Internet",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Internet",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Internet",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Internet",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Internet",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Internet",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Internet",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "IoT",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "IoT",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "IoT",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "IoT",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "IoT",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "IoT",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "IoT",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Remote_Staff",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Remote_Staff",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Remote_Staff",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Remote_Staff",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Remote_Staff",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Remote_Staff",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Remote_Staff",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Student_Net",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Student_Net",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Student_Net",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Student_Net",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Student_Net",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Student_Net",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Student_Net",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Students",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Students",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Students",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Students",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Students",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Students",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Students",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Teachers",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Teachers",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Teachers",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Teachers",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Teachers",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Teachers",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "HR",
+        "dst": "Teachers",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Admin_Network",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Admin_Network",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Admin_Network",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Admin_Network",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Admin_Network",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Admin_Network",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Admin_Network",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "CCTV",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "CCTV",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "CCTV",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "CCTV",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "CCTV",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "CCTV",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "CCTV",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "DHCP_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "DHCP_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "DHCP_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "DHCP_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "DHCP_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "DHCP_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "DHCP_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "DNS_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "DNS_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "DNS_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "DNS_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "DNS_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "DNS_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "DNS_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Guests",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Guests",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Guests",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Guests",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Guests",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Guests",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Guests",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "HR",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "HR",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "HR",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "HR",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "HR",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "HR",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "HR",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "HR_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "HR_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "HR_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "HR_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "HR_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "HR_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "HR_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Internal_Network",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Internal_Network",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Internal_Network",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Internal_Network",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Internal_Network",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Internal_Network",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Internal_Network",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Internet",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Internet",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Internet",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Internet",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Internet",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Internet",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Internet",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Remote_Staff",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Remote_Staff",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Remote_Staff",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Remote_Staff",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Remote_Staff",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Remote_Staff",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Remote_Staff",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Student_Net",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Student_Net",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Student_Net",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Student_Net",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Student_Net",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Student_Net",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Student_Net",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Students",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Students",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Students",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Students",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Students",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Students",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Students",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Teachers",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Teachers",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Teachers",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Teachers",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Teachers",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Teachers",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "IoT",
+        "dst": "Teachers",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Admin_Network",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Admin_Network",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Admin_Network",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Admin_Network",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Admin_Network",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Admin_Network",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Admin_Network",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "CCTV",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "CCTV",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "CCTV",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "CCTV",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "CCTV",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "CCTV",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "CCTV",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "DHCP_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "DHCP_Server",
+        "service": "DHCP",
+        "result": "allow"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "DHCP_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "DHCP_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "DHCP_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "DHCP_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "DHCP_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "DNS_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "DNS_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "DNS_Server",
+        "service": "DNS",
+        "result": "allow"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "DNS_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "DNS_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "DNS_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "DNS_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Guests",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Guests",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Guests",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Guests",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Guests",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Guests",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Guests",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "HR",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "HR",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "HR",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "HR",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "HR",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "HR",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "HR",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "HR_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "HR_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "HR_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "HR_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "HR_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "HR_Server",
+        "service": "HTTPS",
+        "result": "allow"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "HR_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Internal_Network",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Internal_Network",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Internal_Network",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Internal_Network",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Internal_Network",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Internal_Network",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Internal_Network",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Internet",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Internet",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Internet",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Internet",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Internet",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Internet",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Internet",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "IoT",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "IoT",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "IoT",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "IoT",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "IoT",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "IoT",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "IoT",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Student_Net",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Student_Net",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Student_Net",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Student_Net",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Student_Net",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Student_Net",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Student_Net",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Students",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Students",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Students",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Students",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Students",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Students",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Students",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Teachers",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Teachers",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Teachers",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Teachers",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Teachers",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Teachers",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Remote_Staff",
+        "dst": "Teachers",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Admin_Network",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Admin_Network",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Admin_Network",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Admin_Network",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Admin_Network",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Admin_Network",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Admin_Network",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "CCTV",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "CCTV",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "CCTV",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "CCTV",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "CCTV",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "CCTV",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "CCTV",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "DHCP_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "DHCP_Server",
+        "service": "DHCP",
+        "result": "allow"
+    },
+    {
+        "src": "Students",
+        "dst": "DHCP_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "DHCP_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "DHCP_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "DHCP_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "DHCP_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "DNS_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "DNS_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "DNS_Server",
+        "service": "DNS",
+        "result": "allow"
+    },
+    {
+        "src": "Students",
+        "dst": "DNS_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "DNS_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "DNS_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "DNS_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Guests",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Guests",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Guests",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Guests",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Guests",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Guests",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Guests",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "HR",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "HR",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "HR",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "HR",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "HR",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "HR",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "HR",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "HR_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "HR_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "HR_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "HR_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "HR_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "HR_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "HR_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Internal_Network",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Internal_Network",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Internal_Network",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Internal_Network",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Internal_Network",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Internal_Network",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Internal_Network",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Internet",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Internet",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Internet",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Internet",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Internet",
+        "service": "HTTP",
+        "result": "allow"
+    },
+    {
+        "src": "Students",
+        "dst": "Internet",
+        "service": "HTTPS",
+        "result": "allow"
+    },
+    {
+        "src": "Students",
+        "dst": "Internet",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "IoT",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "IoT",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "IoT",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "IoT",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "IoT",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "IoT",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "IoT",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Remote_Staff",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Remote_Staff",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Remote_Staff",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Remote_Staff",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Remote_Staff",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Remote_Staff",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Remote_Staff",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Student_Net",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Student_Net",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Student_Net",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Student_Net",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Student_Net",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Student_Net",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Student_Net",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Teachers",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Teachers",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Teachers",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Teachers",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Teachers",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Teachers",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Students",
+        "dst": "Teachers",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Admin_Network",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Admin_Network",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Admin_Network",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Admin_Network",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Admin_Network",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Admin_Network",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Admin_Network",
+        "service": "SSH",
+        "result": "allow"
+    },
+    {
+        "src": "Teachers",
+        "dst": "CCTV",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "CCTV",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "CCTV",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "CCTV",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "CCTV",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "CCTV",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "CCTV",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "DHCP_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "DHCP_Server",
+        "service": "DHCP",
+        "result": "allow"
+    },
+    {
+        "src": "Teachers",
+        "dst": "DHCP_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "DHCP_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "DHCP_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "DHCP_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "DHCP_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "DNS_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "DNS_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "DNS_Server",
+        "service": "DNS",
+        "result": "allow"
+    },
+    {
+        "src": "Teachers",
+        "dst": "DNS_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "DNS_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "DNS_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "DNS_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Guests",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Guests",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Guests",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Guests",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Guests",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Guests",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Guests",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "HR",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "HR",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "HR",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "HR",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "HR",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "HR",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "HR",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "HR_Server",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "HR_Server",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "HR_Server",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "HR_Server",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "HR_Server",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "HR_Server",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "HR_Server",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Internal_Network",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Internal_Network",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Internal_Network",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Internal_Network",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Internal_Network",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Internal_Network",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Internal_Network",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Internet",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Internet",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Internet",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Internet",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Internet",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Internet",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Internet",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "IoT",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "IoT",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "IoT",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "IoT",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "IoT",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "IoT",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "IoT",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Remote_Staff",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Remote_Staff",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Remote_Staff",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Remote_Staff",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Remote_Staff",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Remote_Staff",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Remote_Staff",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Student_Net",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Student_Net",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Student_Net",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Student_Net",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Student_Net",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Student_Net",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Student_Net",
+        "service": "SSH",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Students",
+        "service": "ANY",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Students",
+        "service": "DHCP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Students",
+        "service": "DNS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Students",
+        "service": "FTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Students",
+        "service": "HTTP",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Students",
+        "service": "HTTPS",
+        "result": "deny"
+    },
+    {
+        "src": "Teachers",
+        "dst": "Students",
+        "service": "SSH",
+        "result": "deny"
+    }
+]

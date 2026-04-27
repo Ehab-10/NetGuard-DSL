@@ -1,0 +1,59 @@
+{
+    "conflicts": [
+        {
+            "first_rule_number": 11,
+            "second_rule_number": 18,
+            "src": "Teachers",
+            "dst": "Admin_Network",
+            "service": "SSH",
+            "first_action": "allow",
+            "second_action": "deny"
+        }
+    ],
+    "duplicates": [
+        {
+            "first_rule_number": 9,
+            "duplicate_rule_number": 17,
+            "action": "allow",
+            "src": "Students",
+            "dst": "Internet",
+            "service": "HTTP"
+        }
+    ],
+    "unreachable_rules": [
+        {
+            "blocked_rule_number": 18,
+            "blocking_rule_number": 11,
+            "action": "deny",
+            "src": "Teachers",
+            "dst": "Admin_Network",
+            "service": "SSH"
+        }
+    ],
+    "redundant_rules": [
+        {
+            "redundant_rule_number": 17,
+            "covered_by_rule_number": 9,
+            "action": "allow",
+            "src": "Students",
+            "dst": "Internet",
+            "service": "HTTP"
+        }
+    ],
+    "missing_dependencies": [
+        {
+            "role": "Guests",
+            "missing_service": "DNS",
+            "required_rule": "allow Guests -> DNS_Server service DNS"
+        },
+        {
+            "role": "Guests",
+            "missing_service": "DHCP",
+            "required_rule": "allow Guests -> DHCP_Server service DHCP"
+        }
+    ],
+    "total_rules": 18,
+    "total_roles": 7,
+    "total_networks": 14,
+    "total_services": 7
+}

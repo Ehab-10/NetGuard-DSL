@@ -1,0 +1,26 @@
+#!/usr/sbin/nft -f
+flush ruleset
+
+table inet access_policy {
+    chain forward {
+        type filter hook forward priority 0; policy drop;
+        ip saddr 10.10.10.0/24 ip daddr 10.10.1.10/32 udp dport 53 accept
+        ip saddr 10.10.10.0/24 ip daddr 10.10.1.20/32 udp dport 67 accept
+        ip saddr 10.10.20.0/24 ip daddr 10.10.1.10/32 udp dport 53 accept
+        ip saddr 10.10.20.0/24 ip daddr 10.10.1.20/32 udp dport 67 accept
+        ip saddr 10.10.40.0/24 ip daddr 10.10.1.10/32 udp dport 53 accept
+        ip saddr 10.10.40.0/24 ip daddr 10.10.1.20/32 udp dport 67 accept
+        ip saddr 10.8.0.0/24 ip daddr 10.10.1.10/32 udp dport 53 accept comment "VPN traffic"
+        ip saddr 10.8.0.0/24 ip daddr 10.10.1.20/32 udp dport 67 accept comment "VPN traffic"
+        ip saddr 10.10.10.0/24 ip daddr 0.0.0.0/0 tcp dport 80 accept
+        ip saddr 10.10.10.0/24 ip daddr 0.0.0.0/0 tcp dport 443 accept
+        ip saddr 10.10.20.0/24 ip daddr 10.10.99.0/24 tcp dport 22 accept
+        ip saddr 10.10.30.0/24 ip daddr 10.10.0.0/16 drop
+        ip saddr 10.10.30.0/24 ip daddr 0.0.0.0/0 tcp dport 80 accept
+        ip saddr 10.10.40.0/24 ip daddr 10.10.40.10/32 tcp dport 443 accept
+        ip saddr 10.8.0.0/24 ip daddr 10.10.10.0/24 drop comment "VPN traffic"
+        ip saddr 10.8.0.0/24 ip daddr 10.10.40.10/32 tcp dport 443 accept comment "VPN traffic"
+        ip saddr 10.10.10.0/24 ip daddr 0.0.0.0/0 tcp dport 80 accept
+        ip saddr 10.10.20.0/24 ip daddr 10.10.99.0/24 tcp dport 22 drop
+    }
+}

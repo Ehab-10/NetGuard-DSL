@@ -1,39 +1,42 @@
+def rule_matches(rule, src, dst, service):
+    service = service.upper()
+
+    src_match = rule["src"] == src or rule["src"].lower() == "any"
+    dst_match = rule["dst"] == dst or rule["dst"].lower() == "any"
+    service_match = rule["service"] == service or rule["service"] == "ANY"
+
+    return src_match and dst_match and service_match
+
+
 def simulate(model, src, dst, service):
     service = service.upper()
 
-    for r in model["rules"]:
-        if (
-            r["src"] == src and
-            r["dst"] == dst and
-            (r["service"] == service or r["service"] == "ANY")
-        ):
-            return r["action"]
+    for rule in model["rules"]:
+        if rule_matches(rule, src, dst, service):
+            return rule["action"]
 
     return "deny"
 
 
 def explain(model, src, dst, service):
     service = service.upper()
-    vpn_pools = model.get("vpn_pools", {})
 
-    for i, r in enumerate(model["rules"], start=1):
-        if (
-            r["src"] == src and
-            r["dst"] == dst and
-            (r["service"] == service or r["service"] == "ANY")
-        ):
+    for index, rule in enumerate(model["rules"], start=1):
+        if rule_matches(rule, src, dst, service):
             extra = ""
-            if r["src"] in vpn_pools:
-                extra = f"\nContext: Source role '{r['src']}' is a VPN role from pool {vpn_pools[r['src']]}"
+
+            if rule["src"] in model.get("vpn_pools", {}):
+                vpn_ip = model["vpn_pools"][rule["src"]]
+                extra = f"\nContext: {rule['src']} is a VPN role using pool {vpn_ip}"
 
             return (
-                f"Result: {r['action'].upper()}\n"
-                f"Reason: Matched rule #{i} -> "
-                f"{r['action'].upper()} {r['src']} -> {r['dst']} (service {r['service']})"
+                f"Result: {rule['action'].upper()}\n"
+                f"Reason: matched rule #{index}\n"
+                f"Rule: {rule['action']} {rule['src']} -> {rule['dst']} service {rule['service']}"
                 f"{extra}"
             )
 
     return (
-        f"Result: DENY\n"
-        f"Reason: No matching rule found for ({src} -> {dst} : {service})"
+        "Result: DENY\n"
+        f"Reason: no matching rule for {src} -> {dst} service {service}"
     )

@@ -1,27 +1,45 @@
-from utils import SERVICE_PORTS, ROLE_IPS, DEST_IPS
+from utils import get_network, get_service, cidr_to_cisco
+
 
 def generate_cisco_acl(model):
     rules = []
+    rules.append("! Generated Cisco ACL rules")
 
-    vpn_pools = model.get("vpn_pools", {})
-    merged_role_ips = {**ROLE_IPS, **vpn_pools}
+    acl_number = 100
 
-    for r in model["rules"]:
-        action = "permit" if r["action"] == "allow" else "deny"
-        src_ip = merged_role_ips.get(r["src"], "any")
-        dst_ip = DEST_IPS.get(r["dst"], "any")
-        service = r["service"]
-        port = SERVICE_PORTS.get(service)
+    for rule in model["rules"]:
+        action = "permit" if rule["action"] == "allow" else "deny"
 
-        if service == "ANY" or port is None:
-            rule = f"{action} ip {src_ip} {dst_ip}"
+        src_cidr = get_network(model, rule["src"])
+        dst_cidr = get_network(model, rule["dst"])
+        service = get_service(model, rule["service"])
+
+        if not src_cidr:
+            rules.append(f"! ERROR: unknown source network: {rule['src']}")
+            continue
+
+        if not dst_cidr:
+            rules.append(f"! ERROR: unknown destination network: {rule['dst']}")
+            continue
+
+        if not service:
+            rules.append(f"! ERROR: unknown service: {rule['service']}")
+            continue
+
+        src = cidr_to_cisco(src_cidr)
+        dst = cidr_to_cisco(dst_cidr)
+
+        protocol = service["protocol"]
+        port = service["port"]
+
+        if protocol == "ip" or port is None:
+            line = f"access-list {acl_number} {action} ip {src} {dst}"
         else:
-            proto = "udp" if service in ("DNS", "DHCP") else "tcp"
-            rule = f"{action} {proto} {src_ip} {dst_ip} eq {port}"
+            line = f"access-list {acl_number} {action} {protocol} {src} {dst} eq {port}"
 
-        if r["src"] in vpn_pools:
-            rule += "  ! VPN traffic"
+        if rule["src"] in model.get("vpn_pools", {}):
+            line += "  ! VPN traffic"
 
-        rules.append(rule)
+        rules.append(line)
 
     return rules

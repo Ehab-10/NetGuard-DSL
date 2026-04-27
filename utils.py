@@ -1,32 +1,43 @@
-SERVICE_PORTS = {
-    "HTTP": 80,
-    "HTTPS": 443,
-    "SSH": 22,
-    "DNS": 53,
-    "DHCP": 67,
-    "FTP": 21,
-    "ANY": None,
-}
+import ipaddress
 
-ROLE_IPS = {
-    "Students": "10.10.10.0/24",
-    "Teachers": "10.10.20.0/24",
-    "Guests": "10.10.30.0/24",
-    "HR": "10.10.40.0/24",
-    "Remote_Staff": "10.8.0.0/24",
-}
 
-DEST_IPS = {
-    "Internet": "0.0.0.0/0",
-    "Admin_Network": "10.10.99.0/24",
-    "Internal_Network": "10.10.0.0/16",
-    "DNS_Server": "10.10.1.10/32",
-    "DHCP_Server": "10.10.1.20/32",
-    "HR_Server": "10.10.40.10/32",
-    "Student_Net": "10.10.10.0/24",
-}
+def get_network(model, name):
+    return model.get("networks", {}).get(name)
 
-DEFAULT_DEPENDENCY_RULES = [
-    {"dst": "DNS_Server", "service": "DNS"},
-    {"dst": "DHCP_Server", "service": "DHCP"},
-]
+
+def get_service(model, name):
+    name = name.upper()
+
+    if name == "ANY":
+        return {
+            "protocol": "ip",
+            "port": None
+        }
+
+    return model.get("services", {}).get(name)
+
+
+def cidr_to_cisco(cidr):
+    if cidr == "0.0.0.0/0":
+        return "any"
+
+    network = ipaddress.ip_network(cidr, strict=False)
+    wildcard = ipaddress.IPv4Address(int(network.hostmask))
+
+    return f"{network.network_address} {wildcard}"
+
+
+def is_any(value):
+    return str(value).upper() == "ANY" or str(value).lower() == "any"
+
+
+DEPENDENCY_SERVICES = {
+    "DNS": {
+        "dst": "DNS_Server",
+        "service": "DNS"
+    },
+    "DHCP": {
+        "dst": "DHCP_Server",
+        "service": "DHCP"
+    }
+}

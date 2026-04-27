@@ -1,26 +1,70 @@
+# =========================
+# Access Policy DSL Example
+# =========================
+
+# Roles
 role Students
 role Teachers
 role Guests
 role HR
+role IoT
+role CCTV
+
+# Networks
+network Students 10.10.10.0/24
+network Teachers 10.10.20.0/24
+network Guests 10.10.30.0/24
+network HR 10.10.40.0/24
+network IoT 10.10.50.0/24
+network CCTV 10.10.60.0/24
+
+network Internet 0.0.0.0/0
+network Admin_Network 10.10.99.0/24
+network Internal_Network 10.10.0.0/16
+network DNS_Server 10.10.1.10/32
+network DHCP_Server 10.10.1.20/32
+network HR_Server 10.10.40.10/32
+network Student_Net 10.10.10.0/24
+
+# VPN
 vpn Remote_Staff 10.8.0.0/24
 
-allow Students -> Internet service HTTP
-deny Students -> Internet service HTTP
+# Services
+service HTTP tcp 80
+service HTTPS tcp 443
+service SSH tcp 22
+service DNS udp 53
+service DHCP udp 67
+service FTP tcp 21
 
+# DHCP/DNS dependencies
 allow Students -> DNS_Server service DNS
-allow Students -> DNS_Server service DNS
+allow Students -> DHCP_Server service DHCP
+
+allow Teachers -> DNS_Server service DNS
+allow Teachers -> DHCP_Server service DHCP
+
+allow HR -> DNS_Server service DNS
+allow HR -> DHCP_Server service DHCP
+
+allow Remote_Staff -> DNS_Server service DNS
+allow Remote_Staff -> DHCP_Server service DHCP
+
+# Access intent
+allow Students -> Internet service HTTP
+allow Students -> Internet service HTTPS
 
 allow Teachers -> Admin_Network service SSH
-deny Teachers -> Admin_Network service SSH
 
 deny Guests -> Internal_Network service ANY
-deny Guests -> Internal_Network service ANY
+allow Guests -> Internet service HTTP
 
 allow HR -> HR_Server service HTTPS
-allow HR -> HR_Server service HTTPS
 
+# VPN policy
 deny Remote_Staff -> Student_Net service ANY
-allow Remote_Staff -> Student_Net service HTTP
-
 allow Remote_Staff -> HR_Server service HTTPS
-deny Remote_Staff -> HR_Server service HTTPS
+
+# Validation examples
+allow Students -> Internet service HTTP
+deny Teachers -> Admin_Network service SSH

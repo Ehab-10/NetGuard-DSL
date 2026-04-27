@@ -4,27 +4,64 @@
         "Teachers",
         "Guests",
         "HR",
+        "IoT",
+        "CCTV",
         "Remote_Staff"
     ],
+    "networks": {
+        "Students": "10.10.10.0/24",
+        "Teachers": "10.10.20.0/24",
+        "Guests": "10.10.30.0/24",
+        "HR": "10.10.40.0/24",
+        "IoT": "10.10.50.0/24",
+        "CCTV": "10.10.60.0/24",
+        "Internet": "0.0.0.0/0",
+        "Admin_Network": "10.10.99.0/24",
+        "Internal_Network": "10.10.0.0/16",
+        "DNS_Server": "10.10.1.10/32",
+        "DHCP_Server": "10.10.1.20/32",
+        "HR_Server": "10.10.40.10/32",
+        "Student_Net": "10.10.10.0/24",
+        "Remote_Staff": "10.8.0.0/24"
+    },
+    "services": {
+        "ANY": {
+            "protocol": "ip",
+            "port": null
+        },
+        "HTTP": {
+            "protocol": "tcp",
+            "port": 80
+        },
+        "HTTPS": {
+            "protocol": "tcp",
+            "port": 443
+        },
+        "SSH": {
+            "protocol": "tcp",
+            "port": 22
+        },
+        "DNS": {
+            "protocol": "udp",
+            "port": 53
+        },
+        "DHCP": {
+            "protocol": "udp",
+            "port": 67
+        },
+        "FTP": {
+            "protocol": "tcp",
+            "port": 21
+        }
+    },
+    "vpn_pools": {
+        "Remote_Staff": "10.8.0.0/24"
+    },
     "rules": [
         {
             "type": "rule",
             "action": "allow",
             "src": "Students",
-            "dst": "Internet",
-            "service": "HTTP"
-        },
-        {
-            "type": "rule",
-            "action": "deny",
-            "src": "Students",
-            "dst": "Internet",
-            "service": "HTTP"
-        },
-        {
-            "type": "rule",
-            "action": "allow",
-            "src": "Students",
             "dst": "DNS_Server",
             "service": "DNS"
         },
@@ -32,6 +69,13 @@
             "type": "rule",
             "action": "allow",
             "src": "Students",
+            "dst": "DHCP_Server",
+            "service": "DHCP"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "Teachers",
             "dst": "DNS_Server",
             "service": "DNS"
         },
@@ -39,36 +83,71 @@
             "type": "rule",
             "action": "allow",
             "src": "Teachers",
-            "dst": "Admin_Network",
-            "service": "SSH"
-        },
-        {
-            "type": "rule",
-            "action": "deny",
-            "src": "Teachers",
-            "dst": "Admin_Network",
-            "service": "SSH"
-        },
-        {
-            "type": "rule",
-            "action": "deny",
-            "src": "Guests",
-            "dst": "Internal_Network",
-            "service": "ANY"
-        },
-        {
-            "type": "rule",
-            "action": "deny",
-            "src": "Guests",
-            "dst": "Internal_Network",
-            "service": "ANY"
+            "dst": "DHCP_Server",
+            "service": "DHCP"
         },
         {
             "type": "rule",
             "action": "allow",
             "src": "HR",
-            "dst": "HR_Server",
+            "dst": "DNS_Server",
+            "service": "DNS"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "HR",
+            "dst": "DHCP_Server",
+            "service": "DHCP"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "Remote_Staff",
+            "dst": "DNS_Server",
+            "service": "DNS"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "Remote_Staff",
+            "dst": "DHCP_Server",
+            "service": "DHCP"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "Students",
+            "dst": "Internet",
+            "service": "HTTP"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "Students",
+            "dst": "Internet",
             "service": "HTTPS"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "Teachers",
+            "dst": "Admin_Network",
+            "service": "SSH"
+        },
+        {
+            "type": "rule",
+            "action": "deny",
+            "src": "Guests",
+            "dst": "Internal_Network",
+            "service": "ANY"
+        },
+        {
+            "type": "rule",
+            "action": "allow",
+            "src": "Guests",
+            "dst": "Internet",
+            "service": "HTTP"
         },
         {
             "type": "rule",
@@ -88,27 +167,22 @@
             "type": "rule",
             "action": "allow",
             "src": "Remote_Staff",
-            "dst": "Student_Net",
-            "service": "HTTP"
+            "dst": "HR_Server",
+            "service": "HTTPS"
         },
         {
             "type": "rule",
             "action": "allow",
-            "src": "Remote_Staff",
-            "dst": "HR_Server",
-            "service": "HTTPS"
+            "src": "Students",
+            "dst": "Internet",
+            "service": "HTTP"
         },
         {
             "type": "rule",
             "action": "deny",
-            "src": "Remote_Staff",
-            "dst": "HR_Server",
-            "service": "HTTPS"
+            "src": "Teachers",
+            "dst": "Admin_Network",
+            "service": "SSH"
         }
-    ],
-    "vpn_pools": {
-        "Remote_Staff": "10.8.0.0/24"
-    },
-    "networks": {},
-    "services": {}
+    ]
 }

@@ -1,38 +1,61 @@
+from simulator import simulate
+from utils import DEPENDENCY_SERVICES
+
+
+def is_wider_or_same(previous_value, current_value):
+    return (
+        previous_value == current_value
+        or previous_value.upper() == "ANY"
+        or previous_value.lower() == "any"
+    )
+
+
+def rule_covers(previous_rule, current_rule):
+    src_ok = is_wider_or_same(previous_rule["src"], current_rule["src"])
+    dst_ok = is_wider_or_same(previous_rule["dst"], current_rule["dst"])
+    service_ok = is_wider_or_same(previous_rule["service"], current_rule["service"])
+
+    return src_ok and dst_ok and service_ok
+
+
 def detect_conflicts(model):
-    seen = {}
     conflicts = []
 
-    for i, rule in enumerate(model["rules"], start=1):
-        key = (rule["src"], rule["dst"], rule["service"])
+    for i, first in enumerate(model["rules"], start=1):
+        for j, second in enumerate(model["rules"], start=1):
+            if j <= i:
+                continue
 
-        if key in seen:
-            old_rule = seen[key]
+            same_src = first["src"] == second["src"]
+            same_dst = first["dst"] == second["dst"]
+            same_service = first["service"] == second["service"]
+            different_action = first["action"] != second["action"]
 
-            if old_rule["action"] != rule["action"]:
+            if same_src and same_dst and same_service and different_action:
                 conflicts.append({
-                    "first_rule_number": old_rule["rule_number"],
-                    "second_rule_number": i,
-                    "src": rule["src"],
-                    "dst": rule["dst"],
-                    "service": rule["service"],
-                    "first_action": old_rule["action"],
-                    "second_action": rule["action"],
+                    "first_rule_number": i,
+                    "second_rule_number": j,
+                    "src": first["src"],
+                    "dst": first["dst"],
+                    "service": first["service"],
+                    "first_action": first["action"],
+                    "second_action": second["action"]
                 })
-        else:
-            seen[key] = {
-                "rule_number": i,
-                "action": rule["action"]
-            }
 
     return conflicts
 
 
 def detect_duplicates(model):
-    seen = {}
     duplicates = []
+    seen = {}
 
     for i, rule in enumerate(model["rules"], start=1):
-        key = (rule["action"], rule["src"], rule["dst"], rule["service"])
+        key = (
+            rule["action"],
+            rule["src"],
+            rule["dst"],
+            rule["service"]
+        )
 
         if key in seen:
             duplicates.append({
@@ -41,19 +64,12 @@ def detect_duplicates(model):
                 "action": rule["action"],
                 "src": rule["src"],
                 "dst": rule["dst"],
-                "service": rule["service"],
+                "service": rule["service"]
             })
         else:
             seen[key] = i
 
     return duplicates
-
-
-def rule_matches(rule, src, dst, service):
-    src_match = rule["src"] == src or rule["src"] == "any"
-    dst_match = rule["dst"] == dst or rule["dst"] == "any"
-    service_match = rule["service"] == service or rule["service"] == "ANY"
-    return src_match and dst_match and service_match
 
 
 def detect_unreachable_rules(model):
@@ -63,36 +79,17 @@ def detect_unreachable_rules(model):
         for j in range(i):
             previous_rule = model["rules"][j]
 
-            same_or_wider_src = (
-                previous_rule["src"] == current_rule["src"]
-                or previous_rule["src"] == "any"
-            )
-            same_or_wider_dst = (
-                previous_rule["dst"] == current_rule["dst"]
-                or previous_rule["dst"] == "any"
-            )
-            same_or_wider_service = (
-                previous_rule["service"] == current_rule["service"]
-                or previous_rule["service"] == "any"
-            )
-
-            different_action = previous_rule["action"] != current_rule["action"]
-
-            if (
-                same_or_wider_src
-                and same_or_wider_dst
-                and same_or_wider_service
-                and different_action
-            ):
-                unreachable.append({
-                    "blocked_rule_number": i + 1,
-                    "blocking_rule_number": j + 1,
-                    "action": current_rule["action"],
-                    "src": current_rule["src"],
-                    "dst": current_rule["dst"],
-                    "service": current_rule["service"],
-                })
-                break
+            if rule_covers(previous_rule, current_rule):
+                if previous_rule["action"] != current_rule["action"]:
+                    unreachable.append({
+                        "blocked_rule_number": i + 1,
+                        "blocking_rule_number": j + 1,
+                        "action": current_rule["action"],
+                        "src": current_rule["src"],
+                        "dst": current_rule["dst"],
+                        "service": current_rule["service"]
+                    })
+                    break
 
     return unreachable
 
@@ -104,57 +101,74 @@ def detect_redundant_rules(model):
         for j in range(i):
             previous_rule = model["rules"][j]
 
-            same_action = previous_rule["action"] == current_rule["action"]
-
-            same_or_wider_src = (
-                previous_rule["src"] == current_rule["src"]
-                or previous_rule["src"] == "any"
-            )
-            same_or_wider_dst = (
-                previous_rule["dst"] == current_rule["dst"]
-                or previous_rule["dst"] == "any"
-            )
-            same_or_wider_service = (
-                previous_rule["service"] == current_rule["service"]
-                or previous_rule["service"] == "any"
-            )
-
-            if (
-                same_action
-                and same_or_wider_src
-                and same_or_wider_dst
-                and same_or_wider_service
-            ):
-                redundant.append({
-                    "redundant_rule_number": i + 1,
-                    "covered_by_rule_number": j + 1,
-                    "action": current_rule["action"],
-                    "src": current_rule["src"],
-                    "dst": current_rule["dst"],
-                    "service": current_rule["service"],
-                })
-                break
+            if rule_covers(previous_rule, current_rule):
+                if previous_rule["action"] == current_rule["action"]:
+                    redundant.append({
+                        "redundant_rule_number": i + 1,
+                        "covered_by_rule_number": j + 1,
+                        "action": current_rule["action"],
+                        "src": current_rule["src"],
+                        "dst": current_rule["dst"],
+                        "service": current_rule["service"]
+                    })
+                    break
 
     return redundant
+
+
+def detect_missing_dependencies(model):
+    """
+    DNS/DHCP-aware validation.
+
+    If a role has any allow rule to a non-infrastructure destination,
+    it should also have DNS and DHCP access.
+    """
+    missing = []
+
+    roles_with_access = set()
+
+    for rule in model["rules"]:
+        if rule["action"] == "allow":
+            if rule["dst"] not in ["DNS_Server", "DHCP_Server"]:
+                roles_with_access.add(rule["src"])
+
+    for role in sorted(roles_with_access):
+        for dependency_name, dependency in DEPENDENCY_SERVICES.items():
+            dst = dependency["dst"]
+            service = dependency["service"]
+
+            result = simulate(model, role, dst, service)
+
+            if result != "allow":
+                missing.append({
+                    "role": role,
+                    "missing_service": dependency_name,
+                    "required_rule": f"allow {role} -> {dst} service {service}"
+                })
+
+    return missing
 
 
 def validation_matrix(model):
     matrix = []
 
-    roles = model["roles"]
-    destinations = sorted(set(rule["dst"] for rule in model["rules"]))
-    services = sorted(set(rule["service"] for rule in model["rules"]))
+    sources = sorted(set(model["roles"]))
+    destinations = sorted(set(model["networks"].keys()))
+    services = sorted(set(model["services"].keys()))
 
-    for src in roles:
+    for src in sources:
         for dst in destinations:
+            if src == dst:
+                continue
+
             for service in services:
-                result = "deny"
+                result = simulate(model, src, dst, service)
 
-                for rule in model["rules"]:
-                    if rule_matches(rule, src, dst, service):
-                        result = rule["action"]
-                        break
-
-                matrix.append((src, dst, service, result))
+                matrix.append({
+                    "src": src,
+                    "dst": dst,
+                    "service": service,
+                    "result": result
+                })
 
     return matrix
